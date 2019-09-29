@@ -1,17 +1,17 @@
-# Tennis reservations
+## Tennis reservations
 
 A simple web server where users can reserve an hourly time slot to play tennis on a single tennis court. This tennis court is open every day from 10am to 10pm which gives tennis players 12 hours of play time each day.
 
-## API
+### API
 
 Uses [Flask](http://flask.pocoo.org/) Python web framework. Serve employs a REST API and responds to HTTP requests.
 
-## `GET /`
+### `GET /`
 
 Prints a simple welcome message `Welcome to tennis reservations`.
 
 
-## `GET /reservations`
+### `GET /reservations`
 
 List all hourly time slots. If `available` is set to `true` it means that time slot is available and `player` will contain a name of a player that made that reservation.
 
@@ -40,7 +40,7 @@ List all hourly time slots. If `available` is set to `true` it means that time s
  - `500 "Internal Server Error"`
 
 
-## `GET /reservations?hour=11am`
+### `GET /reservations?hour=11am`
 
 Fetch reservation for specific hour. URL query parameter `hour` should be in the flollowing format `HHam` or `HHpm`.
 
@@ -59,7 +59,7 @@ Fetch reservation for specific hour. URL query parameter `hour` should be in the
  - `500 "Internal Server Error"`
 
 
-## `POST /reservations`
+### `POST /reservations`
 
 Player can make a reservation **only** if that `hour` is available.
 
@@ -85,7 +85,7 @@ Player can make a reservation **only** if that `hour` is available.
  - `500 "Internal Server Error"`
 
 
-## Running
+### Running
 
 Use `flask` command to start the server
 
@@ -93,7 +93,7 @@ Use `flask` command to start the server
 FLASK_APP=server.py flask run
 ```
 
-## Testing
+### Testing
 
 1. Make sure you have the server running
 2. Install `pip install requests nose` and then run
