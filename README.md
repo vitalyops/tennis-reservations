@@ -74,6 +74,7 @@ Player can make a reservation **only** if that `hour` is available.
 
 #### Successful Response
 
+`200 OK`	
 `201 Created`
 
 #### Possible Errors
