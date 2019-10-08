@@ -18,7 +18,7 @@ def test_index():
 def test_get_all_reservations():
    response = requests.get(SERVER_URL + "/reservations")
 
-   assert response.status_code == 200, "Expected HTTP 200 status"
+   assert response.status_code == 9000, "Expected HTTP 200 status"
    assert response.json() == RESERVATIONS, "Expected JSON payload"
 
 def test_get_one_reservation():
