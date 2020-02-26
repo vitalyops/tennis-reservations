@@ -27,7 +27,7 @@ pipeline {
                 milestone(1)
                 withCredentials([sshUserPrivateKey(credentialsId: 'backend_ssh', usernameVariable: 'USERNAME', keyFileVariable: 'SSH_KEY')]) {
                     script {
-                        sh " ssh -i $SSH_KEY StrictHostKeyChecking=no $USERNAME@backend_ip \"docker pull n0nce/tennis-server:${env.BUILD_NUMBER}\""
+                        sh " ssh -i $SSH_KEY -o StrictHostKeyChecking=no $USERNAME@backend_ip \"docker pull n0nce/tennis-server:${env.BUILD_NUMBER}\""
                         try {
                             sh " ssh -To -i $SSH_KEY StrictHostKeyChecking=no $USERNAME@backend_ip \"docker stop tennis-server\""
                             sh " ssh -To -i $SSH_KEY StrictHostKeyChecking=no $USERNAME@backend_ip \"docker rm tennis-server\""
