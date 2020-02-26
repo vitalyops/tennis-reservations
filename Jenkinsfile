@@ -7,6 +7,7 @@ pipeline {
                     app = docker.build("n0nce/tennis-server")
                     app.inside {
                         sh 'echo $(curl localhost:5000)'
+                        sh 'echo $(nosetests)'
                     }
                 }
             }
