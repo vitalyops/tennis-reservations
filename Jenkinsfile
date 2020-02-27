@@ -14,12 +14,10 @@ pipeline {
         stage('Test Docker Image') {
             steps {
                 script {
-                    app.inside {
                         sh "nosetests"
                     }
                 }
             }
-        }
         stage('Push Docker Image') {
             steps {
                 script {
