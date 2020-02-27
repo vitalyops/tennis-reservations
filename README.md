@@ -91,7 +91,7 @@ Player can make a reservation **only** if that `hour` is available.
 Use `flask` command to start the server
 
 ```console
-FLASK_APP=server.py flask run
+python server.py
 ```
 
 ### Testing
