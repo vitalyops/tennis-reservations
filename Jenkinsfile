@@ -1,12 +1,20 @@
 pipeline {
     agent any
     stages {
-        stage('Build and Test Docker Image') {
+        stage('Build Docker Image') {
             steps {
                 script {
                     app = docker.build("n0nce/tennis-server")
                     app.inside {
                         sh 'echo $(curl localhost:5000)'
+                    }
+                }
+            }
+        }
+        stage('Test Docker Image') {
+            steps {
+                script {
+                    app.inside {
                         sh 'echo $(nosetests)'
                     }
                 }
