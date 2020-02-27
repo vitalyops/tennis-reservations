@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     app.inside {
-                        sh 'echo $(nosetests)'
+                        sh "nosetests"
                     }
                 }
             }
