@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Build Docker Image') {
+        stage('Build and Test Docker Image') {
             steps {
                 script {
                     app = docker.build("n0nce/tennis-server")
