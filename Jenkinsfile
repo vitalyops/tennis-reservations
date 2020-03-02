@@ -8,15 +8,7 @@ pipeline {
                     app.inside {
 			sh 'nohup python server.py &'
                         sh 'curl localhost:5000'
-                    }
-                }
-            }
-        }
-        stage('Test Docker Image') {
-            steps {
-                script {
-                    app.inside {
-                        sh "nosetests"
+                        sh 'nosetests'
                     }
                 }
             }
