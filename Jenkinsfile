@@ -7,7 +7,7 @@ pipeline {
                     app = docker.build("n0nce/tennis-server")
                     app.inside {
 			sh 'nohup python server.py &'
-                        sh 'curl localhost:5001'
+                        sh 'curl localhost:5000'
                     }
                 }
             }
