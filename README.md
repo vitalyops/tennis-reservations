@@ -102,5 +102,3 @@ python server.py
 ```console
 nosetests -d
 ```
-
-
